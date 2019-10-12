@@ -41,7 +41,7 @@ jobs:
           name: Build
           command: |
             source /opt/poky/2.1.3/environment-setup-cortexa9hf-neon-poky-linux-gnueabi
-            qmake edit.pro -spec linux-oe-g++
+            qmake keywriter.pro -spec linux-oe-g++
             /usr/bin/make
 
       - run:
@@ -49,8 +49,8 @@ jobs:
           command: find .
 
       - store_artifacts:
-          path: edit
-          destination: edit
+          path: keywriter
+          destination: keywriter
 
       - run:
           name: Ship tagged build artifacts to github
