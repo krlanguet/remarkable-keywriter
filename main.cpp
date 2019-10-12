@@ -6,7 +6,7 @@
 Q_IMPORT_PLUGIN(QsgEpaperPlugin)
 #endif
 // end reMarkable additions
-#include "edit_utils.h"
+#include "keywriter_utils.h"
 #include <QtQml>
 
 int main(int argc, char *argv[])
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    qmlRegisterType<EditUtils>("io.singleton", 1, 0, "EditUtils");
+    qmlRegisterType<KeywriterUtils>("io.singleton", 1, 0, "KeywriterUtils");
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())

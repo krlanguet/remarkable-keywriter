@@ -1,5 +1,5 @@
-#ifndef EDIT_UTILS_H
-#define EDIT_UTILS_H
+#ifndef KEYWRITER_UTILS_H
+#define KEYWRITER_UTILS_H
 
 #include <QObject>
 
@@ -8,10 +8,10 @@
 #include "buffer.h"
 
 
-class EditUtils : public QObject{
+class KeywriterUtils : public QObject{
    Q_OBJECT
 public:
-    explicit EditUtils (QObject* parent = 0) : QObject(parent) {}
+    explicit KeywriterUtils (QObject* parent = 0) : QObject(parent) {}
     Q_INVOKABLE QString markdown(QString input){
         struct sd_callbacks callbacks;
         struct html_renderopt options;
@@ -31,4 +31,4 @@ public:
     }
 };
 
-#endif // EDIT_UTILS_H
+#endif // KEYWRITER_UTILS_H

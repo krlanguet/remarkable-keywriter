@@ -38,4 +38,4 @@ DISTFILES += \
     index.txt
 
 HEADERS += \
-    edit_utils.h
+    keywriter_utils.h

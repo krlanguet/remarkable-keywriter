@@ -5,7 +5,7 @@ import io.singleton 1.0
 
 Window {
     visible: true;
-    title: qsTr("edit")
+    title: qsTr("keywriter")
     width: 1404;
     height: 1872;
 
@@ -16,11 +16,11 @@ Window {
     property string omniQuery: "";
     property string currentFile: "scratch.md";
 
-    EditUtils {
+    KeywriterUtils {
         id: utils
     }
     FolderListModel {
-        folder: "file:///home/root/edit/"
+        folder: "file:///home/root/keywriter/"
         id: folderModel
         nameFilters: ["*.md"]
     }
@@ -44,7 +44,7 @@ Window {
 
     function doLoad(name) {
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", "file:///home/root/edit/" + name);
+        xhr.open("GET", "file:///home/root/keywriter/" + name);
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE) {
                 var response = xhr.responseText;
@@ -59,7 +59,7 @@ Window {
 
     function saveFile() {
         console.log("Save " + currentFile);
-        var fileUrl = "file:///home/root/edit/" + currentFile;
+        var fileUrl = "file:///home/root/keywriter/" + currentFile;
         var request = new XMLHttpRequest();
         request.open("PUT", fileUrl, false);
         request.send(doc);
@@ -69,7 +69,7 @@ Window {
 
     function initFile(name) {
         console.log("Init " + name);
-        var fileUrl = "file:///home/root/edit/" + name + ".md";
+        var fileUrl = "file:///home/root/keywriter/" + name + ".md";
         var request = new XMLHttpRequest();
         request.open("PUT", fileUrl, false);
         request.send("# " + name);

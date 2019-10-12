@@ -2,4 +2,4 @@
 
 These files typically need to go in `/etc/draft/...`.
 
-* Make sure the path to the `edit` binary in `04-edit` matches where you actually copied it.
+* Make sure the path to the `keywriter` binary in `04-keywriter` matches where you actually copied it.
